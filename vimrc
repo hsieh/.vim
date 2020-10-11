@@ -158,6 +158,9 @@ call plug#end()
 " Theme
 colorscheme dracula
 
+" Localleader
+let maplocalleader=","
+
 " Run Clear
 noremap <Leader>rz :call VimuxRunCommand("clear")<CR>
 
