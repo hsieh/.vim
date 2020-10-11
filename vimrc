@@ -217,6 +217,9 @@ noremap <Leader>vs "ry :call VimuxSendText(@r)<CR>
 " ripgrep
 noremap <Leader>rg :Rg<SPACE>
 
+" vimagit
+let g:magit_show_magit_mapping='m'
+
 " NERDTreeToggle
 noremap <F8> :NERDTreeToggle<CR>
 
