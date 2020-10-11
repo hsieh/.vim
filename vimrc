@@ -128,7 +128,7 @@ Plug 'junegunn/vim-easy-align'
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } |
                         \ Plug 'Xuyuanp/nerdtree-git-plugin' |
-                        "\ Plug 'ryanoasis/vim-devicons'
+                        \ Plug 'ryanoasis/vim-devicons'
 
 " Tmux
 "Plug 'jgdavey/tslime.vim'
