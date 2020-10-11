@@ -121,6 +121,7 @@ Plug 'mbbill/undotree'
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'jreybert/vimagit'
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
@@ -150,9 +151,6 @@ Plug 'elixir-lang/vim-elixir'
 
 " Conquer of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" LeaderF
-Plug 'yggdroot/leaderf'
 
 " Initialize plugin system
 call plug#end()
