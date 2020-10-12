@@ -129,16 +129,11 @@ Plug 'junegunn/vim-easy-align'
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } |
                         \ Plug 'Xuyuanp/nerdtree-git-plugin' |
-                        \ Plug 'ryanoasis/vim-devicons'
+                        "\ Plug 'ryanoasis/vim-devicons'
 
 " Tmux
 "Plug 'jgdavey/tslime.vim'
 Plug 'benmills/vimux'
-
-" status bar
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-"Plug 'itchyny/lightline.vim'
 
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -390,35 +385,15 @@ command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-set laststatus=2
-
-" airline
-let g:airline_theme             = 'dracula'
-let g:airline_enable_branch     = 1
-let g:airline_enable_syntastic  = 1
+"set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+"set laststatus=2
 
 " Note: You must define the dictionary first before setting values.
 " Also, it's a good idea to check whether it exists as to avoid 
 " accidentally overwriting its contents.
 
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-
-" powerline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = '☰'
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.dirty='⚡'
-
 " showmode
-set nosmd
+set smd
 
 " Mappings for CoCList
 " Show all diagnostics.
