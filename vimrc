@@ -136,10 +136,12 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } |
 Plug 'benmills/vimux'
 
 " Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf.vim'
+Plug 'pbogut/fzf-mru.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Grep
-Plug 'yegappan/grep'
+"Plug 'yegappan/grep'
 
 " Plugin for elixir
 Plug 'elixir-lang/vim-elixir'
@@ -240,7 +242,35 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 let g:NERDTreeGitStatusUseNerdFonts = 1
 
 " FZF
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+let g:fzf_commits_log_options = '--graph --color=always
+      \ --format="%C(yellow)%h%C(red)%d%C(reset)
+      \ - %C(bold green)(%ar)%C(reset) %s %C(blue)<%an>%C(reset)"'
+noremap <silent> <Localleader>c :Commits<CR>
+noremap <silent> <Localleader>bc :BCommits<CR>
+noremap <silent> <Localleader>h :History<CR>
 noremap <C-p> :FZF<CR>
+nnoremap <silent> <Localleader>z :FZFMru<CR>
+nnoremap <silent> <Localleader>f :Files<CR>
+nnoremap <silent> <Localleader>F :Files <C-r>=expand("%:h")<Cr>/<CR>
+nnoremap <silent> <Localleader>r :Rg<CR>
+
+set grepprg=rg\ --vimgrep\ --smart-case\ --follow
+
+if has('nvim-0.4.0') || has("patch-8.2.0191")
+  let g:fzf_layout = { 'window': {
+        \ 'width': 0.9,
+        \ 'height': 0.7,
+        \ 'highlight': 'Comment',
+        \ 'rounded': v:false } }
+else
+  let g:fzf_layout = { "window": "silent botright 16split enew" }
+endif
+
+
+" Term
+
+nnoremap <silent> <Localleader>t :term<CR>
 
 " undotree
 if has("persistent_undo")
@@ -386,7 +416,7 @@ command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
 "set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-"set laststatus=2
+set laststatus=2
 
 " Note: You must define the dictionary first before setting values.
 " Also, it's a good idea to check whether it exists as to avoid 
