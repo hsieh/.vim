@@ -7,19 +7,19 @@ set nocp
 " open a file, switch buffers, delete a buffer or open/close a window.
 " It will change to the directory containing the file which was opened
 " or selected.
-set acd
+set autochdir
 
 " show number
 " Same as :print, but precede each line with its line
 " number.  (See also 'highlight' and 'numberwidth'
 " option).
 " See |ex-flags| for [flags].
-set nu
+set number
 " relativenumber
-set rnu
+set relativenumber
 
 " 80 colorcolumn
-set cc=80
+set colorcolumn=80
 
 " Cursorline, Cursorcolumn Highlight the screen line of the cursor with CursorLine
 set nocul nocuc
@@ -71,6 +71,8 @@ set sb
 set encoding=UTF-8
 
 " timeout ttimeout
+" set timeoutlen=512
+" set ttimeoutlen=-1
 set noto
 set nottimeout
 
