@@ -2,78 +2,45 @@
 " make Vim behave in a more useful way.
 set nocp
 
-" autochdir
-" When on, Vim will change the current working directory whenever you
-" open a file, switch buffers, delete a buffer or open/close a window.
-" It will change to the directory containing the file which was opened
-" or selected.
 set autochdir
 
-" show number
-" Same as :print, but precede each line with its line
-" number.  (See also 'highlight' and 'numberwidth'
-" option).
-" See |ex-flags| for [flags].
-set number
-" relativenumber
-set relativenumber
+set number relativenumber
 
-" 80 colorcolumn
-set colorcolumn=80
+set colorcolumn=80,120
 
-" Cursorline, Cursorcolumn Highlight the screen line of the cursor with CursorLine
 set nocul nocuc
 
-" Showcmd: Show (partial) command in the last line of the screen.  Set this
-" option off if your terminal is slow.
-set sc
+set showcmd
 
-" no wrap
 set nowrap
 
-" tabstop
-set ts=2
+set tabstop=2
 
-" shiftwidth
-set sw=2
+set shiftwidth=2
 
-" softtabstop
-set sts=0
+set softtabstop=0
 
-" expandtab
-set et
+set expandtab
 
-" smarttab
-set sta
+set smarttab
 
-" autoindent
-set ai
+set autoindent
 
-" scrolloff
-set so=4
+set scrolloff=4
 
-" textwidth
-set tw=0
+set textwidth=0
 
-" ttyfast, lazyredraw: should make scrolling faster
-set tf
-set lz
+set ttyfast lazyredraw
 
-" splitright
-" When on, splitting a window will put the new window right of the current one. 
-set spr
+set splitright
 
-" splitbelow
-" When on, splitting a window will put the new window below the current one. 
-set sb
+set splitbelow
 
-" encoding
 set encoding=UTF-8
 
-" timeout ttimeout
 " set timeoutlen=512
 " set ttimeoutlen=-1
-set noto
+set notimeout
 set nottimeout
 
 " guifont
@@ -84,6 +51,8 @@ set guioptions-=T
 
 " disable menu
 "set guioptions-=m
+
+set showmode
 
 " Coc: TextEdit might fail if hidden is not set.
 set hidden
@@ -114,9 +83,6 @@ call plug#begin('~/.vim/plugged')
 
 " Register vim-plug as a plugin.
 Plug 'junegunn/vim-plug'
-
-" Theme
-Plug 'dracula/vim'
 
 " Undotree
 Plug 'mbbill/undotree'
@@ -155,7 +121,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " Theme
-colorscheme dracula
+colorscheme darkblue
 
 " Localleader
 let maplocalleader=","
@@ -424,9 +390,6 @@ set laststatus=2
 " Also, it's a good idea to check whether it exists as to avoid 
 " accidentally overwriting its contents.
 
-" showmode
-set smd
-
 " Mappings for CoCList
 " Show all diagnostics.
 nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
@@ -449,7 +412,6 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 nnoremap <leader>qq :call QuickfixToggle()<cr>
 
 let g:quickfix_is_open = 0
-
 function! QuickfixToggle()
     if g:quickfix_is_open
         cclose
