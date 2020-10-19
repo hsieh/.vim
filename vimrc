@@ -108,6 +108,8 @@ Plug 'majutsushi/tagbar'
 
 Plug 'jnurmine/zenburn'
 
+Plug 'airblade/vim-gitgutter'
+
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } |
                         \ Plug 'Xuyuanp/nerdtree-git-plugin' |
