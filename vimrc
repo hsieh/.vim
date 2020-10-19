@@ -49,6 +49,12 @@ set nottimeout
 " disable toolbar
 set guioptions-=T
 
+" Disable scrollbars (real hackers don't use scrollbars for navigation!)
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
+
 " disable menu
 "set guioptions-=m
 
@@ -94,6 +100,14 @@ Plug 'jreybert/vimagit'
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
 
+Plug 'tpope/vim-surround'
+
+Plug 'vim-scripts/matchit.zip'
+
+Plug 'majutsushi/tagbar'
+
+Plug 'jnurmine/zenburn'
+
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } |
                         \ Plug 'Xuyuanp/nerdtree-git-plugin' |
@@ -121,7 +135,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " Theme
-colorscheme darkblue
+colorscheme zenburn
 
 " Localleader
 let maplocalleader=","
@@ -190,6 +204,9 @@ let g:magit_show_magit_mapping='m'
 
 " NERDTreeToggle
 noremap <F8> :NERDTreeToggle<CR>
+
+" TagbarToggle
+noremap <F9> :TagbarToggle<CR>
 
 " Automatically close NERDTree when you open a file
 let NERDTreeQuitOnOpen=0
