@@ -96,6 +96,7 @@ Plug 'mbbill/undotree'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'jreybert/vimagit'
+Plug 'airblade/vim-gitgutter'
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
@@ -107,8 +108,7 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'majutsushi/tagbar'
 
 Plug 'jnurmine/zenburn'
-
-Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/seoul256.vim'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } |
@@ -120,9 +120,9 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } |
 Plug 'benmills/vimux'
 
 " Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', {  'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'pbogut/fzf-mru.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Grep
 "Plug 'yegappan/grep'
