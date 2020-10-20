@@ -137,7 +137,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " Theme
-colorscheme zenburn
+colorscheme seoul256
 
 " Localleader
 let maplocalleader=","
