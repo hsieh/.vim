@@ -202,7 +202,7 @@ noremap <Leader>vs "ry :call VimuxSendText(@r)<CR>
 noremap <Leader>rg :Rg<SPACE>
 
 " vimagit
-let g:magit_show_magit_mapping='m'
+let g:magit_show_magit_mapping="<Localleader>m"
 
 " NERDTreeToggle
 noremap <F8> :NERDTreeToggle<CR>
@@ -233,9 +233,10 @@ command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-hea
 let g:fzf_commits_log_options = '--graph --color=always
       \ --format="%C(yellow)%h%C(red)%d%C(reset)
       \ - %C(bold green)(%ar)%C(reset) %s %C(blue)<%an>%C(reset)"'
-noremap <silent> <Localleader>c :Commits<CR>
-noremap <silent> <Localleader>bc :BCommits<CR>
+noremap <silent> <Localleader>C :Commits<CR>
+noremap <silent> <Localleader>c :BCommits<CR>
 noremap <silent> <Localleader>h :History<CR>
+noremap <silent> <Localleader>b :Buffers<CR>
 noremap <C-p> :FZF<CR>
 nnoremap <silent> <Localleader>z :FZFMru<CR>
 nnoremap <silent> <Localleader>f :Files<CR>
@@ -426,6 +427,9 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" execute select code
+vnoremap <silent><nowait> <cr> "ry:execute @r<CR>
 
 " quickfix
 nnoremap <leader>qq :call QuickfixToggle()<cr>
