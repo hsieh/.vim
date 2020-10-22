@@ -222,7 +222,7 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Deleted'   :'✖',
                 \ 'Dirty'     :'✗',
                 \ 'Ignored'   :'☒',
-                \ 'Clean'     :'✔︎',
+                \ 'Clean'     :'✔',
                 \ 'Unknown'   :'?',
                 \ }
 
