@@ -1,14 +1,14 @@
 " This option has the effect of making Vim either more Vi-compatible, or
 " make Vim behave in a more useful way.
-set nocp
+set nocompatible
 
-set autochdir
+set noautochdir
 
 set number relativenumber
 
 set colorcolumn=80,120
 
-set nocul nocuc
+set nocursorline nocursorcolumn
 
 set showcmd
 
@@ -258,11 +258,15 @@ endif
 
 " Term
 
-nnoremap <silent> <Localleader>t :term<CR>
+if has("nvim")
+  nnoremap <silent> <Localleader>t :split term://bash<CR>
+else
+  nnoremap <silent> <Localleader>t :term<CR>
+endif
 
-" undotree
+" Undotree
 if has("persistent_undo")
-        set undodir=$HOME."/.undodir"
+        set undodir= "~/.undodir"
         set undofile
 endif
 
