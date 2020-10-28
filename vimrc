@@ -163,7 +163,7 @@ noremap <Leader>rx :call VimuxRunCommand("clear; iex -S mix")<CR>
 
 function! s:VimuxOpenRunner()
   source ~/.vim/script/vimux_hook.vim
-  call VimuxOpenRunner() 
+  call VimuxOpenRunner()
 endfunction
 
 noremap <Leader>rr :call <SID>VimuxOpenRunner() <CR>
@@ -423,7 +423,7 @@ set laststatus=2
 set showtabline=2
 
 " Note: You must define the dictionary first before setting values.
-" Also, it's a good idea to check whether it exists as to avoid 
+" Also, it's a good idea to check whether it exists as to avoid
 " accidentally overwriting its contents.
 
 " Mappings for CoCList
