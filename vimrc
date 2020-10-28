@@ -87,6 +87,10 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 
+" status line
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 " Register vim-plug as a plugin.
 Plug 'junegunn/vim-plug'
 
@@ -129,6 +133,11 @@ Plug 'pbogut/fzf-mru.vim'
 
 " Plugin for elixir
 Plug 'elixir-lang/vim-elixir'
+" Plug 'andyl/vim-textobj-elixir'
+Plug 'mmorearty/elixir-ctags'
+
+" Plugin for erlang
+Plug 'vim-erlang/vim-erlang-tags'
 
 " Conquer of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -138,6 +147,7 @@ call plug#end()
 
 " Theme
 colorscheme seoul256
+let g:airline_theme='seoul256'
 
 " Localleader
 let maplocalleader=","
@@ -409,6 +419,8 @@ command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport
 " provide custom statusline: lightline.vim, vim-airline.
 "set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 set laststatus=2
+
+set showtabline=2
 
 " Note: You must define the dictionary first before setting values.
 " Also, it's a good idea to check whether it exists as to avoid 
