@@ -128,6 +128,9 @@ Plug 'junegunn/fzf', {  'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'pbogut/fzf-mru.vim'
 
+" ycm
+"Plug 'valloric/youcompleteme'
+
 " Grep
 "Plug 'yegappan/grep'
 
