@@ -128,6 +128,9 @@ Plug 'junegunn/fzf', {  'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'pbogut/fzf-mru.vim'
 
+" im-select
+Plug 'brglng/vim-im-select'
+
 " ycm
 "Plug 'valloric/youcompleteme'
 
@@ -475,3 +478,13 @@ endfunction
 
 noremap <silent><nowait><Leader>re :call <SID>reloadModule()<CR>
 
+" im-select
+if has('nvim') || has('wsl')
+  let g:im_select_command = expand('$HOME/.vim/exec/im-select.exe')
+  let g:im_select_get_im_cmd = [expand('$HOME/.vim/exec/im-select.exe')]
+  let g:ImSelectSetImCmd = {key -> [expand('$HOME/.vim/exec/im-select.exe'), key]}
+  let g:im_select_enable_events=0
+  let g:im_select_default=1033
+else
+  call ImSelectDisable()
+endif
