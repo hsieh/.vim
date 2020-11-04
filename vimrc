@@ -485,6 +485,4 @@ if has('nvim') || has('wsl')
   let g:ImSelectSetImCmd = {key -> [expand('$HOME/.vim/exec/im-select.exe'), key]}
   let g:im_select_enable_events=0
   let g:im_select_default=1033
-else
-  call ImSelectDisable()
 endif
