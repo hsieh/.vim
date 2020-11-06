@@ -131,6 +131,9 @@ Plug 'pbogut/fzf-mru.vim'
 " im-select
 Plug 'brglng/vim-im-select'
 
+" float term
+Plug 'voldikss/vim-floaterm'
+
 " ycm
 "Plug 'valloric/youcompleteme'
 
@@ -271,14 +274,22 @@ else
   let g:fzf_layout = { "window": "silent botright 16split enew" }
 endif
 
-
 " Term
-
 if has("nvim")
   nnoremap <silent> <Localleader>t :split term://bash<CR>
+  nnoremap <silent> <Localleader>T :vsplit term://bash<CR>
+  nnoremap <silent> <Localleader>e :split term://iex<CR>
+  nnoremap <silent> <Localleader>E :vsplit term://iex<CR>
 else
   nnoremap <silent> <Localleader>t :term<CR>
 endif
+
+" ranger (floaterm)
+command! Ranger FloatermNew ranger
+
+command! LazyGit FloatermNew lazygit
+nnoremap <silent> <Localleader>w :Ranger<CR>
+nnoremap <silent> <Localleader>g :LazyGit<CR>
 
 " Undotree
 if has("persistent_undo")
