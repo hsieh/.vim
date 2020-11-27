@@ -45,6 +45,7 @@ set nottimeout
 
 " guifont
 "set guifont=DroidSansMon\ Nerd\ Font\ 11
+set guifont=Hack\ 24
 
 " disable toolbar
 set guioptions-=T
@@ -106,10 +107,12 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/vim-easy-align'
 
 Plug 'tpope/vim-surround'
+" Plug 'wellle/targets.vim'
 
 Plug 'vim-scripts/matchit.zip'
 
 Plug 'majutsushi/tagbar'
+" Plug 'liuchengxu/vista.vim'
 
 Plug 'jnurmine/zenburn'
 Plug 'junegunn/seoul256.vim'
@@ -312,6 +315,8 @@ let g:coc_disable_startup_warning = 1
 let g:coc_global_extensions = [
                         \'coc-vimlsp',
                         \'coc-json',
+                        \'coc-java',
+                        \'coc-java-debug',
                         \'coc-prettier',
                         \'coc-elixir',
                         \'coc-erlang_ls',
