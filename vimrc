@@ -26,7 +26,7 @@ set smarttab
 
 set autoindent
 
-set scrolloff=4
+set scrolloff=0
 
 set textwidth=0
 
@@ -111,7 +111,9 @@ Plug 'tpope/vim-surround'
 
 Plug 'vim-scripts/matchit.zip'
 
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
+" Plug 'craigemery/vim-autotag'
+" Plug 'brookhong/cscope.vim'
 " Plug 'liuchengxu/vista.vim'
 
 Plug 'jnurmine/zenburn'
@@ -125,6 +127,8 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } |
 " Tmux
 "Plug 'jgdavey/tslime.vim'
 Plug 'benmills/vimux'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'tmux-plugins/vim-tmux'
 
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', {  'do': { -> fzf#install() } }
@@ -133,6 +137,10 @@ Plug 'pbogut/fzf-mru.vim'
 
 " im-select
 Plug 'brglng/vim-im-select'
+
+" number
+Plug 'myusuf3/numbers.vim'
+" Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 " float term
 Plug 'voldikss/vim-floaterm'
@@ -495,10 +503,16 @@ endfunction
 noremap <silent><nowait><Leader>re :call <SID>reloadModule()<CR>
 
 " im-select
-if has('nvim') || has('wsl')
+if has('nvim') && has('wsl')
   let g:im_select_command = expand('$HOME/.vim/exec/im-select.exe')
   let g:im_select_get_im_cmd = [expand('$HOME/.vim/exec/im-select.exe')]
   let g:ImSelectSetImCmd = {key -> [expand('$HOME/.vim/exec/im-select.exe'), key]}
   let g:im_select_enable_events=0
   let g:im_select_default=1033
+elseif has('nvim') && has('unix') && !has('mac')
+  let g:im_select_command = '/usr/bin/fcitx-remote'
+  let g:im_select_get_im_cmd = ['/usr/bin/fcitx-remote']
+  let g:ImSelectSetImCmd = {key -> ['/usr/bin/fcitx-remote', '-t', key]}
+  let g:im_select_enable_events=0
+  let g:im_select_default=1
 endif
