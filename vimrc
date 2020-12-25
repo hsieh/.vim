@@ -236,6 +236,7 @@ let g:magit_show_magit_mapping="<Localleader>m"
 
 " NERDTreeToggle
 noremap <F8> :NERDTreeToggle<CR>
+noremap <F7> :NERDTreeFind<CR>
 
 " TagbarToggle
 noremap <F9> :TagbarToggle<CR>
@@ -272,6 +273,7 @@ nnoremap <silent> <Localleader>z :FZFMru<CR>
 nnoremap <silent> <Localleader>f :Files<CR>
 nnoremap <silent> <Localleader>F :Files <C-r>=expand("%:h")<Cr>/<CR>
 nnoremap <silent> <Localleader>r :Rg<CR>
+let $FZF_DEFAULT_OPTS = '--layout=reverse'
 
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow
 
@@ -495,7 +497,7 @@ endfunction
 
 function! s:reloadModule()
   let pos = getpos(".")
-  execute "normal! gg/defmodule\<CR>wvt \"ry"
+  execute "normal! G/defmodule\<CR>wvt \"ry"
   call VimuxSendText("r " . @r ."\n")
   call setpos(".", pos)
 endfunction
