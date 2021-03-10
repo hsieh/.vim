@@ -135,6 +135,9 @@ Plug 'junegunn/fzf', {  'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'pbogut/fzf-mru.vim'
 
+" vimwiki
+Plug 'vimwiki/vimwiki'
+
 " im-select
 Plug 'brglng/vim-im-select'
 
@@ -183,7 +186,7 @@ noremap <Leader>rx :call VimuxRunCommand("clear; iex -S mix")<CR>
 
 function! s:VimuxOpenRunner()
   source ~/.vim/script/vimux_hook.vim
-  call VimuxOpenRunner()
+  " call VimuxOpenRunner()
 endfunction
 
 noremap <Leader>rr :call <SID>VimuxOpenRunner() <CR>
